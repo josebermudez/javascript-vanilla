@@ -1,0 +1,10 @@
+- title: Inicio
+  url: /
+- title: Javascript
+  url: /
+  sublinks:
+    - title: Currying
+      url: /2019/05/09/currying.html
+    - title: separator
+    - title: Event Bubbling
+      url: /2019/05/08/event-bubbling.html
