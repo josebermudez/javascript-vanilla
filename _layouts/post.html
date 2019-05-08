@@ -1,0 +1,100 @@
+---
+layout: default
+---
+{% assign author = site.authors[page.author] %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "url": "{{ site.url }}javascript-vanilla/{{ page.url }}",
+  "name": {{ page.title | jsonify }},
+  "headline": {{ page.title | jsonify }},
+  "keywords": {{ page.tags | join: ',' | jsonify }},
+  "description": {{ page.excerpt | strip_newlines | strip | jsonify }},
+  "articleBody": {{ page.content | strip_html | jsonify }},
+  "datePublished": {{ page.date | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: page.date | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ author.display_name | jsonify }},
+    "givenName": {{ author.first_name | jsonify }},
+    "familyName": {{ author.last_name | jsonify }},
+    "email": {{ site.email | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "url": "{{ site.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "width": 32,
+      "height": 32,
+      "url": "{{ site.url }}/icon/favicon.ico"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}javascript-vanilla/{{ page.url }}"
+  }
+}
+</script>
+
+
+
+<div class="container">
+   <div class="row">
+
+	 <div class="col-md-9 flex-first flex-md-unordered">
+       <div class="mainheading">
+
+                <!-- Author Box -->
+                {% if page.author %}
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        {% if author.avatar %}
+                        <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
+                        {% else %}
+                        <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+                        {% endif %}
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a>
+                        <span class="author-description">{{ author.description }}</span>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Post Title -->
+                <h1 class="posttitle">{{ page.title }}</h1>
+                <a href='{{site.url}}/javascript-vanilla'>Regresar</a>
+
+        </div>
+         <!-- Post Featured Image -->
+            {% if page.image %}
+	            {% if site.lazyimages == "enabled" %}
+	            <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt="{{ page.title }}">
+	            {% else %}
+	            <img class="featured-image img-fluid" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt="{{ page.title }}">
+	            {% endif %}
+
+            {% endif %}
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                {% if page.toc %}
+                    {% if page.beforetoc %}
+                        <p><em>{{page.beforetoc}}</em></p>
+                    {% endif %}
+                    <div class="toc mt-4 mb-4 lead">
+                        <h3 class="font-weight-bold">Summary</h3>
+                        {% include toc.html html=content %}
+                    </div>
+                {% endif %}
+                <!-- End Toc -->
+                {{content}}
+            </div>
+	</div>
+
+</div>
+	</div>

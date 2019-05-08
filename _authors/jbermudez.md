@@ -1,0 +1,13 @@
+---
+short_name: jbermudez
+name: Jose Joaquin Bermudez Correa
+first_name: Jose Joaquin Bermudez Correa
+last_name: Bermudez Correa
+email: quinoj@gmail.com
+avatar: assets/images/jbermudez.jpg
+web: http://www.josejoaquinbermudez.com/javascript-vanilla
+description: "Web developer."
+position: Writer
+---
+Jose es un desarrollador web con experiencia en JavaScript y PHP
+    

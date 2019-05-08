@@ -1,1 +1,20 @@
 theme: jekyll-theme-dinky
+paginate: 5
+plugins:
+- jekyll-paginate
+- jekyll-seo-tag
+title: Javascript Vanilla
+description: Conocimientos generales de Javascript
+# Authors
+authors:
+  jbermudez:
+    name: Jose Joaquin Bermudez Correa
+    display_name: Jose J Bermudez Correa
+    first_name: Jose Joaquin
+    last_name: Bermudez Correa
+    avatar: assets/images/jbermudez.png
+    email: quinoj@gmail.com
+    web: http://www.josejoaquinbermudez.com/javascript-vanilla
+    description: "Web developer."
+google_analytics: UA-43471108-1
+lang: es_CO
