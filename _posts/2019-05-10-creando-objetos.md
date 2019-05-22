@@ -21,7 +21,6 @@ En este post vamos a explorar como podemos crear objetos en JavaScript.
 <iframe width="100%" height="300" src="//jsfiddle.net/jjbermudez/t1h9psvx/5/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 * Usando Object.create
->>>>>>> adef093a5898b1b3ee190510c369f3d63e2e8e2d
 
 <iframe width="100%" height="300" src="//jsfiddle.net/jjbermudez/qxf4agjv/17/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
